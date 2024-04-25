@@ -1,1 +1,21 @@
-<p>car-list works!</p>
+<!-- src/app/car-list/car-list.component.html -->
+
+<div>
+  <h2>Car List</h2>
+  <table>
+      <thead>
+          <tr>
+              <th>Brand</th>
+              <th>Model</th>
+              <th>Year</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let car of cars">
+              <td>{{ car.brand }}</td>
+              <td>{{ car.model }}</td>
+              <td>{{ car.year }}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
