@@ -1,5 +1,7 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import Home from './components/Home';
+import CarList from './components/CarList';
+import CarForm from './components/CarForm';
 
 function App() {
   const [page, setPage] = useState('home');
@@ -10,6 +12,8 @@ function App() {
         return <Home />;
       case 'carList':
         return <CarList />;
+      case 'carForm':
+        return <CarForm />;
       default:
         return <Home />;
     }
@@ -20,28 +24,11 @@ function App() {
       <header>
         <button onClick={() => setPage('home')}>Home</button>
         <button onClick={() => setPage('carList')}>Car List</button>
+        <button onClick={() => setPage('carForm')}>Car Form</button>
       </header>
       <main>
         {renderPage()}
       </main>
-    </div>
-  );
-}
-
-function Home() {
-  return (
-    <div>
-      <h1>Home Page</h1>
-      <p>Welcome to the Home page!</p>
-    </div>
-  );
-}
-
-function CarList() {
-  return (
-    <div>
-      <h1>Car List</h1>
-      <p>This is the Car List page.</p>
     </div>
   );
 }
