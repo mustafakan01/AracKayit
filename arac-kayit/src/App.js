@@ -1,20 +1,48 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; 
-import Home from './components/Home';
-import CarList from './components/CarList';
+import { useState } from 'react';
 
 function App() {
+  const [page, setPage] = useState('home');
+
+  const renderPage = () => {
+    switch (page) {
+      case 'home':
+        return <Home />;
+      case 'carList':
+        return <CarList />;
+      default:
+        return <Home />;
+    }
+  };
+
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/car-list">
-          <CarList />
-        </Route>
-      </Switch>
-    </Router>
+    <div>
+      <header>
+        <button onClick={() => setPage('home')}>Home</button>
+        <button onClick={() => setPage('carList')}>Car List</button>
+      </header>
+      <main>
+        {renderPage()}
+      </main>
+    </div>
+  );
+}
+
+function Home() {
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <p>Welcome to the Home page!</p>
+    </div>
+  );
+}
+
+function CarList() {
+  return (
+    <div>
+      <h1>Car List</h1>
+      <p>This is the Car List page.</p>
+    </div>
   );
 }
 
