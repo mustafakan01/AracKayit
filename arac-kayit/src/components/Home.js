@@ -1,7 +1,12 @@
 import React from 'react';
+import './style.css'; 
 
 function Home() {
-  return <h1>Welcome to Home Page</h1>;
+  return (
+    <div className="home-container">
+      <h1 className="home-title">Welcome to Home Page</h1> 
+    </div>
+  );
 }
 
 export default Home;

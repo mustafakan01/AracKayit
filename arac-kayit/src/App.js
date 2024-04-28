@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Home from './components/Home';
 import CarList from './components/CarList';
 import CarForm from './components/CarForm';
+import './components/style.css'
 
 function App() {
   const [page, setPage] = useState('home');
