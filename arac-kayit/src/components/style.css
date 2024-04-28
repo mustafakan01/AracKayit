@@ -1,0 +1,44 @@
+.car-form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .car-form-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .car-form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .car-form-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .car-form-container input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .car-form-container button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .car-form-container button:hover {
+    background-color: #0056b3;
+  }
+  

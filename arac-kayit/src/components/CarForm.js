@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './style.css'; 
 
 function CarForm() {
   const [plateNumber, setPlateNumber] = useState('');
   const [modelYear, setModelYear] = useState('');
   const [inspectionDate, setInspectionDate] = useState('');
+  const [permitImage, setPermitImage] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('URL', { // API URL'sini buraya yazın
+      const response = await axios.post('http://localhost:5097/api/Cars',
+       {
         plateNumber,
         modelYear,
         inspectionDate,
+        permitImage,
       });
       console.log('Başarıyla gönderildi:', response.data);
     } catch (error) {
@@ -21,7 +25,7 @@ function CarForm() {
   };
 
   return (
-    <div>
+    <div className="car-form-container">
       <h1>Car Form</h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -49,6 +53,15 @@ function CarForm() {
             id="inspectionDate"
             value={inspectionDate}
             onChange={(e) => setInspectionDate(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="permitImage">Ruhsat Fotoğrafı URL:</label>
+          <input
+            type="text"
+            id="permitImage"
+            value={permitImage}
+            onChange={(e) => setPermitImage(e.target.value)}
           />
         </div>
         <button type="submit">Kaydet</button>
