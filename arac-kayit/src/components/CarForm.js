@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function CarForm() {
   const [plateNumber, setPlateNumber] = useState('');
   const [modelYear, setModelYear] = useState('');
   const [inspectionDate, setInspectionDate] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = {
-      plateNumber,
-      modelYear,
-      inspectionDate,
-    };
-    console.log('Form verileri:', formData);
+    try {
+      const response = await axios.post('URL', { // API URL'sini buraya yazın
+        plateNumber,
+        modelYear,
+        inspectionDate,
+      });
+      console.log('Başarıyla gönderildi:', response.data);
+    } catch (error) {
+      console.error('Hata:', error);
+    }
   };
 
   return (
