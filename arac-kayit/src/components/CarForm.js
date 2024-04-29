@@ -7,7 +7,7 @@ import './style.css';
 function CarForm() {
   const [plateNumber, setPlateNumber] = useState('');
   const [modelYear, setModelYear] = useState('');
-  const [inspectionDate, setInspectionDate] = useState(new Date()); // Başlangıç olarak bugünün tarihini ayarlayın
+  const [inspectionDate, setInspectionDate] = useState(new Date());
   const [permitImage, setPermitImage] = useState('');
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
@@ -21,10 +21,19 @@ function CarForm() {
         permitImage,
       });
       console.log('Başarıyla gönderildi:', response.data);
-      setShowSuccessPopup(true); // Başarı pop-up'ını göster
+      setShowSuccessPopup(true);
     } catch (error) {
       console.error('Hata:', error);
     }
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      setPermitImage(reader.result);
+    };
+    reader.readAsDataURL(file);
   };
 
   return (
@@ -58,13 +67,17 @@ function CarForm() {
           />
         </div>
         <div>
-          <label htmlFor="permitImage">Ruhsat Fotoğrafı URL:</label>
+          <label htmlFor="permitImage">Ruhsat Fotoğrafı:</label>
+          <label htmlFor="file-upload" className="custom-file-upload">
+            Dosya Seç
+          </label>
           <input
-            type="text"
-            id="permitImage"
-            value={permitImage}
-            onChange={(e) => setPermitImage(e.target.value)}
+            type="file"
+            id="file-upload"
+            accept="image/*"
+            onChange={handleFileChange}
           />
+          {permitImage && <img src={permitImage} alt="Ruhsat Fotoğrafı" />}
         </div>
         <button type="submit">Kaydet</button>
       </form>

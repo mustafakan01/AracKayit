@@ -7,7 +7,6 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -28,8 +27,8 @@
   border-radius: 5px;
 }
 
-.car-form-container button {
-  padding: 10px;
+.custom-file-upload {
+  padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -37,9 +36,64 @@
   cursor: pointer;
 }
 
-.car-form-container button:hover {
+.custom-file-upload:hover {
   background-color: #0056b3;
 }
+
+#file-upload {
+  visibility: hidden;
+}
+
+.car-form-container img {
+  max-width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.car-form-container button[type="submit"] {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.car-form-container button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.success-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.success-popup p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.success-popup button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.success-popup button:hover {
+  background-color: #0056b3;
+}
+
 
 .home-container {
   max-width: 800px;
@@ -170,4 +224,40 @@ button:hover {
 .car-list-container li p {
   margin: 5px 0;
 }
+
+.car-list-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.car-list-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.car-list-container input[type="text"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.car-list-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.car-list-container li {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.car-list-container li img {
+  max-width: 100%;
+  height: auto;
+}
+
 

@@ -55,7 +55,7 @@ function CarList() {
             <p>Plaka: {car.plateNumber}</p>
             <p>Model Yılı: {car.modelYear}</p>
             <p>Muayene Tarihi: {car.inspectionDate}</p>
-            <p>Ruhsat Fotoğrafı: {car.permitImage}</p>
+            <p>Ruhsat Fotoğrafı: <img src={car.permitImage} alt="Ruhsat Fotoğrafı" /></p>
           </li>
         ))}
       </ul>
