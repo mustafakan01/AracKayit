@@ -192,6 +192,15 @@ button:hover {
   font-weight: bold;
 }
 
+.car-list-container .delete-button {
+  color: white;
+  background-color: red;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 .car-list-container {
   padding: 20px;
 }
