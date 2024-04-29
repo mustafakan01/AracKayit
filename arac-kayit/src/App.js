@@ -23,9 +23,9 @@ function App() {
   return (
     <div>
       <header>
-        <button onClick={() => setPage('home')}>Home</button>
-        <button onClick={() => setPage('carList')}>Car List</button>
-        <button onClick={() => setPage('carForm')}>Car Form</button>
+        <button onClick={() => setPage('home')}>Ana Sayfa</button>
+        <button onClick={() => setPage('carList')}>Araç Listesi</button>
+        <button onClick={() => setPage('carForm')}>Araç Form</button>
       </header>
       <main>
         {renderPage()}
